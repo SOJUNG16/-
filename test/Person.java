@@ -7,6 +7,6 @@ class Person {
 	float height;
 	
 	void printstates() {
-		System.out.println();
+		System.out.println("이름: "+name+", 나이: "+age+", 키: "+height+" ");
 	}
 }

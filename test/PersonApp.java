@@ -1,16 +1,11 @@
 package test;
 import java.util.Scanner;
 
-class PersonApp{
+class PersonApp {
 	public static void main(String[] args) {
+		System.out.print("Ïù¥Î¶Ñ?");
 		Scanner scanner = new Scanner(System.in);
-		Person[] persons = new Person[3];
-		for(int i=1; i<3; i++) {
-			Person person = new Person();
-			System.out.println("¿Ã∏ß¿∫ πº¥œ±Ó?");
-			Person.name = scanner.next();
-			System.out.println("≥™¿Ã¥¬?");
-			
-		}
+		Person person = new Person();
+		
 	}
 }

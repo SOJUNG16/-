@@ -33,8 +33,8 @@ public class Shop {
 		this.sum = this.phprice+this.tvprice+this.coprice;
 	}
 	
-	void printstates() {
-		System.out.println(""+name+"´Ô °áÁ¦ÇÏ½Ç ÃÑ ±İ¾×Àº "+sum+"¸¸¿ø ÀÔ´Ï´Ù");
+	public void printstates() {
+		System.out.println(""+name+"ë‹˜ì´ ê²°ì œí•˜ì‹¤ ê¸ˆì•¡ì€ ì´ "+sum+"ì…ë‹ˆë‹¤");
 	}
 
 }

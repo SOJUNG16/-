@@ -39,7 +39,7 @@ public class Student {
 	}
 	
 	void printstates() {
-		System.out.println("±¹¾î: "+kor+", ¿µ¾î: "+eng+", ¼öÇĞ:"+math+", sum:"+sum+", avg: "+avg+"");
+		System.out.println("êµ­ì–´: "+kor+", ì˜ì–´: "+eng+", ìˆ˜í•™:"+math+", sum:"+sum+", avg: "+avg+"");
 	}
 	
 
