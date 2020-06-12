@@ -1,6 +1,7 @@
 package race;
 
 class Player {
+	
 	private String name;
 	private int record;
 	
