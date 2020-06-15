@@ -14,17 +14,6 @@ public class WhileDemo {
 			case 1 : System.out.println("게임실행"); break;
 			}
 			
-			
-			
-			
-		/*while(true) {
-			System.out.println("메뉴: 0.종료 1.게임");
-			int flag =  scanner.nextInt();
-			switch(flag) {
-			case 0 :System.out.println("게임종료"); return;
-			case 1 :System.out.println("게임실행"); break;
-			}*/
-			
 	}
 	
 	}

@@ -5,37 +5,48 @@ package member;
 
 public class MemberServiceImpl implements MemberService{
 	private Member[] members; 
-	private int idx = 0; //idx 배열 순서 0번 1번 2번
+	private int count; //idx 배열 순서 0번 1번 2번
 	
 	public MemberServiceImpl() {
 		members = new Member[3];
-		idx = 0; //variable의 형태
+		count = 0; //variable의 형태
 	}
     @Override
 	public void join(Member member) {
-		System.out.println("App 에서 넘어온 회원 정보");
-		System.out.println(member.toString());
-		members[idx] = member;
-		idx++;
-		System.out.println("증가된 인덱스 값: "+idx);
-		System.out.println("배열에 저장된 회원정보");
+		members[count] = member;
+		count++;
+			} 
 		
-		for(int i=0; i < members.length; i++) {
-			if(members[i] != null) {
-			System.out.println(members[i].toString());
-			} else {
-				System.out.println("회원정보가 없습니다.");
+	@Override
+	public String login (Member member) {
+		String result = "FAIL";
+		for(int i=0; i< count; i++) {
+			if( member.getUserid().equals(members[i].getUserid())
+					&& member.getPassword().equals(members[i].getPassword())) {
+			result = "SUCCESS";
+			break;
 			} 
 		}
-		
-    }
-	@Override
-	public void login() {
-		
-	}
+		return result;
+	}		
+
+
 	@Override
 	public Member[] list() {
 		return members;
 	}
+	
+	@Override
+	public String existId(Member member) {
+		System.out.println("중복 체크할 아이디: "+member.getUserid());
+		String result = "중복없음";
+		for(int i=0; i< count; i++) {
+			if(member.getUserid().equals(members[i].getUserid())) {
+				result = "중복된 아이디";
+			}	
+		}
+		return result;
+	}
+		
+	}
 
-}
