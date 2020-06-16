@@ -10,7 +10,7 @@ package matrix;
 public class Matrix5 {
 public static void main(String[] arags) {
 	int[][] mtx = new int[5][5];
-	int k = 1;
+	int k = 1; //정의
 	for(int i=0; i< mtx.length; i++) { 
 		System.out.println("");
 		for(int j=0; j< mtx[i].length; j++) { 
@@ -18,6 +18,7 @@ public static void main(String[] arags) {
 			mtx[i][j] = k++*5;
 		}
 		}
+	
 	for(int i=0; i< mtx.length; i++) { 
 		System.out.println("");
 		for(int j=0; j< mtx[i].length; j++) { 

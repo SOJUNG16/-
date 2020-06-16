@@ -11,19 +11,3 @@ public class Sequence5050 {
 		System.out.println(sum);
 	}
 }
-{
-	int [] arr = {1, 2, 3, 4, 5} ;
-	int sum = 0;
-	int i=1;
-	while(true) {
-		if (i<arr.length) {
-			if(arr[i] % 2 ==0) {
-			sum += arr[i];}
-			i++;
-		} else { 
-			System.out.println(sum);
-	}
-	
-	} 
-	
-}
