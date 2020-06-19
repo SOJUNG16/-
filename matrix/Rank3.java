@@ -26,6 +26,7 @@ public class Rank3 {
 				}
 			}	
 		}
+		//출력
 		for(int i=0; i<arr.length; i++) {
 			System.out.printf("%d등 %d점\n", (i+1) ,arr[i]);
 			
