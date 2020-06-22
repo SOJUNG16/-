@@ -27,7 +27,7 @@ public class MemberApp {
 		while(true) {
 			System.out.println("메뉴: 0.종료 1.회원가입 2.로그인 3.회원목록 "
 					+ "4.아이디 중복체크 5. 비번수정 6.회원탈퇴 7.아이디 검색"
-					+ " 8.이름검색 9.전체 회원수");
+					+ " 8.이름검색  9.전체 회원수");
 			switch(scanner.nextInt()) {
 			case 0 : System.out.println("종료"); return;
 			case 1 :  //회원가입
@@ -96,8 +96,9 @@ public class MemberApp {
 				System.out.println(member.toString());
 				break;
 			case 8 : //이름 검색
-				Member[] findedMembers = memberService.nameSearch(scanner.next());
-				for(Member m: findedMembers) {
+				System.out.println("이름검색");
+				Member[] findMembers = memberService.nameSearch(scanner.next());
+				for(Member m: findMembers) {
 					System.out.println(m.toString());
 				}
 				break;

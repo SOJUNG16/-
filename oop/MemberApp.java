@@ -187,8 +187,8 @@ public class MemberApp {
 		Member member = null;
 		MemberService memberService = new MemberServiceImpl();
 		while (true) {
-			System.out.println("메뉴: 0.종료 1.회원가입 2.로그인"
-					+ "5.아이디존재 7.회원목록");
+			System.out.println("메뉴: 0.종료 1.회원가입 2.로그인 "
+					+ "5.아이디존재 7.아이디검색 8. 이름검색");
 			switch (scanner.nextInt()) {
 			case 0: System.out.println("종료");return;
 			case 1: // 1. 회원가입
