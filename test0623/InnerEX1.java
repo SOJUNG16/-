@@ -26,8 +26,9 @@ public static void main(String[] args) {
 	System.out.println(InstanceInner.CONST);
 	System.out.println(StaticInner.cv);
 }
-LocalInner = new LocalInner();
 }
-InnerEx1 ex = new InnerEx1();
-InnerEx1.InstanceInner inner1 = ex.new InstanceInner();
-InnerEx1.StaticInner inner2 = new InnerEx1.StaticInner();
+//LocalInner = new LocalInner();
+//}
+//InnerEx1 ex = new InnerEx1();
+//InnerEx1.InstanceInner inner1 = ex.new InstanceInner();
+//InnerEx1.StaticInner inner2 = new InnerEx1.StaticInner();
