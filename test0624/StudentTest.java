@@ -43,7 +43,8 @@ public class StudentTest {
 		int count = 0;
 		Scanner scanner = new Scanner(System.in);
 		Student [] students = new Student[100];
-	
+		
+		while(true) {
 		System.out.println("선택하세요. [0:나가기, 1:학생입력, 2:학생수출력, 3:학과별 학점평균,4:학생목록출력]");
 		switch (scanner.nextInt()) {
 		case 0: System.out.println("나가기");
@@ -76,7 +77,7 @@ public class StudentTest {
 			break;
 		case 3: //3:학과별 학점평균
 			System.out.println("학과를 입력하세요");
-			
+		}
 			
 						
 			

@@ -5,10 +5,10 @@ public class ArrayEx6 {
 		int[] score = {79,88,91,33,100,55,95};
 		
 		int max = score[0];
-		int min = 
+		int min = score[0];
 		
 		for(int i=0; i<score.length; i++) {
-			arr[i]>arr[i+1] 
+			//arr[i]>arr[i+1] 
 		}
 		
 		System.out.println("최대값: ");
