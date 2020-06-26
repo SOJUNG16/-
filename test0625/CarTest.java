@@ -35,10 +35,19 @@ class Car{
 	int num;
 	int size;
 	int type;
+	@Override
+	public String toString() {
+		return " 차량번호=" + num + ", 차량크기=" + size + ", 차량타입=" + type + "";
+	}
 }
 class Customer {
 	String name;
 	int id;
+	@Override
+	public String toString() {
+		return "고객번호=" + id +" 고객명= " + name + ", ";
+	}
+	
 }
 public class CarTest {
 	public static void main(String[] args) {
@@ -105,22 +114,26 @@ public class CarTest {
 				
 			case 3 : //차량조회
 				System.out.println("[차량조회]");
+				int num = scanner.nextInt();
 				for(Car c : cars) {
-					if(c != null) {
-						System.out.println("차량번호 :" +c.num);
-						System.out.println("차량크기(소형(1)/중형(2)/대형(3)): " +c.size);
-						System.out.println("차량타입(세단(1)/SUV(2)): " +c.type);
-						System.out.println("----------------------");
+					if(c != null && car.num == c.num) {
+						System.out.println(c.toString());
+//						System.out.println("차량번호 :" +c.num);
+//						System.out.println("차량크기(소형(1)/중형(2)/대형(3)): " +c.size);
+//						System.out.println("차량타입(세단(1)/SUV(2)): " +c.type);
+//						System.out.println("----------------------");
 					}
 				} 
 				break;
 			case 4 : //고객조회
 				System.out.println("[고객조회]");
+				int id = scanner.nextInt();
 				for(Customer cu : customers) {
-					if(cu != null) {
-						System.out.println("고객번호 :" +cu.id);
-						System.out.println("고객명: " +cu.name);
-						System.out.println("----------------------");
+					if(cu != null && cus.id == cu.id) {
+						System.out.println(cus.toString());
+//						System.out.println("고객번호 :" +cu.id);
+//						System.out.println("고객명: " +cu.name);
+//						System.out.println("----------------------");
 					}
 				}
 				break;
