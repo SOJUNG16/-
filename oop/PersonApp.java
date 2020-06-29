@@ -88,8 +88,11 @@ interface PersonService{
 	/** 4. 회원탈퇴  */
 	public void remove(Student student);
 	/** 5. 아이디 존재 체크 */ 
-	public String existId(String id);
-	/** 6. 마이페이지 */ 
+	public String existId(String id);     
+	
+	
+	
+	
 	public Student mypage(String id);
 	/** 7. 점수 입력 */
 	public void score(int[] arr);

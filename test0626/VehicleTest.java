@@ -143,8 +143,6 @@ public class VehicleTest {
 		System.out.println(v.equals(vs[0]));//
 		((Car)vs[0]).refuel(); //car로 변환하고 호출
 		
-		
-		
 	}
 
 }
