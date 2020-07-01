@@ -1,4 +1,4 @@
-package test0631;
+package test0701;
 
 class Mother {
 	private String name;
@@ -77,31 +77,28 @@ class Child{
 	public String[] getHobby() {
 		return hobby;
 	}
-	public void setHobby(String hobby) { //‘바둑,농구,수영’을 전달하면String[] hobby에 추가되도록 구현
-		//this.hobby = hobby;
-		String [] arr = hobby.split(",");
-			this.hobby = arr;
-//		for(int i =0; i<arr.length; i++) {
-//			System.out.println(arr[i]);
-//		}
+	public void setHobby(String hobbys) { //‘바둑,농구,수영’을 전달하면String[] hobby에 추가되도록 구현
+		this.hobby = hobbys.split(",");
+		for(int i =0; i< hobby.length; i++) {
+			System.out.println(hobby[i]);
+		}
 	}
 	void goToSchool() {
 		System.out.println("학교가다");
 	}
 	void fight(Child c) { //‘아이이름’과 싸웠습니다 출력 전부다 출력하고 싶은게 아니라 하나만 출력해야 하니까 c를 받음
-		System.out.println(""+c.getName()+"과 싸웠습니다");
+		System.out.println(""+getName()+"과 "+c.getName()+"과 싸웠습니다");
 	}
 }
 public class MotherTest {
 	public static void main(String[] args) {
 		
 		Child[] c = new Child[3];
-		String [] hobby = {"바둑","농구","수영"};
+		String hobbys = "바둑,농구,수영";
 		for(int i = 0; i < 3; i++) {
 			c[i] = new Child();
 			c[i].setName("아이이름"+ (i+1));
 			c[i].setAge(10);
-			c[i].setHobby("바둑,농구,수영");
 		}
 		
 		Mother m = new Mother();
@@ -109,10 +106,11 @@ public class MotherTest {
 		m.callChild(c);
 		
 		Child c2 = new Child();
+		c2.setHobby(hobbys);
 		c2.goToSchool();
+		c2.setName("유정");
 		c2.fight(c[1]);
-		c2.setName(hobby[1]);
-		System.out.println(hobby[1]);
+		
 		
 	}
 

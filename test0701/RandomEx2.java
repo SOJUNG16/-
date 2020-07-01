@@ -1,4 +1,4 @@
-package test0631;
+package test0701;
 
 import java.util.Random;
 

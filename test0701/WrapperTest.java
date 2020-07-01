@@ -1,4 +1,4 @@
-package test0631;
+package test0701;
 
 public class WrapperTest {
 	public static void main(String[] args) {

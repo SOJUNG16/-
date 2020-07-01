@@ -1,4 +1,4 @@
-package test0631;
+package test0701;
 
 public class RandomEx4 {
 	final static int RECORD_NUM = 10;
