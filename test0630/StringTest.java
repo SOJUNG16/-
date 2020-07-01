@@ -41,6 +41,11 @@ public class StringTest {
 //		int idx = s.indexOf("CD");
 //		System.out.println(idx);
 		
+		String animals = "dog, cat, bear";
+		String [] arr = animals.split(",");
+		for(int i=0; i<arr.length; i++) {
+		System.out.println("arr[i]="+arr[i]);
+		}
 		
 	}
 }

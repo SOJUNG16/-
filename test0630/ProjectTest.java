@@ -1,4 +1,5 @@
 package test0630;
+//클래스는 생성자 인스턴스를 만들 수 있는 방법 제안
 
 public class ProjectTest {
 	public static void main(String[] args) {
@@ -82,13 +83,12 @@ class Programmer {
 		System.out.printf("%d년 %d월",sum/12, sum%12);
 	}
 	public void setTotalHistory(Project[] parr) { //총 경력을 설정한다
-		//배열은 주소값을 가지고 있음          
+		//배열은 주소값을 가지고 있음
+		//this.history = parr;
+		this.history = parr;
 		for(int i=0; i<3; i++) {
-			
+			this.history[i]=parr[i];
 		}
-		
-		
-		
 	}
 }
 class Project {
