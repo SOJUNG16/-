@@ -51,14 +51,24 @@ abstract class Project {
 	public abstract void design();
 	public abstract void develop();
 	
-//"홍길동", "20200601", "20200620", "서울"
-//	string 으로 날짜를 받음 8자리로 받음
-//	20200701
-//	일차이를 계산
-//	getTimelnnMillis 시간으로 밀리세컨트 로 변환해줌
-	 public int getPeriod(Project p) { //startDt와 endDt의 날자차이를 리턴,  getTimeInMillis()이용
-		 Calendar per = Calendar.getInstance();
-		 per.set(field, value);
+	 public int getPeriod() { //startDt와 endDt의 날자차이를 리턴,  getTimeInMillis()이용
+		 Calendar start = Calendar.getInstance();
+		 Calendar end = Calendar.getInstance();
+		 //이상 미만
+		 int year = Integer.valueOf(startDt.substring(0,4));
+		 int month = Integer.valueOf(startDt.substring(4,6))-1;
+		 int day = Integer.valueOf(startDt.substring(6,8));
+		
+		 start.set(year,month,day);
+		
+		 year = Integer.valueOf(endDt.substring(0,4));
+		 month = Integer.valueOf(endDt.substring(4,6))-1;
+		 day = Integer.valueOf(endDt.substring(6,8));
+		 //일차이계산 (end - start)
+		 end.set(year, month, day);
+		 
+		long cal = (end.getTimeInMillis() - start.getTimeInMillis())/(1000*60*60*24);
+		return (int)cal;
 	
  	}
 	public int getMMByDeveloper(Developer [] dev) { //Project에 참여한 개발자의 총 월간 개월수
@@ -138,8 +148,9 @@ public class DeveloperTest {
 		System.out.println(p.getMMByDeveloper(dev));
 		p.design();
 		p.develop();
+		System.out.println(p.getPeriod());
 		
-		Developer d = new Developer();
+		
 		
 	}
 
