@@ -2,7 +2,7 @@ package oop;
 
 import java.util.Random;
 import java.util.Scanner;
-
+    
 /*
 "가위,바위,보를 고르세요."
 "1.가위 2.바위 3.보"
