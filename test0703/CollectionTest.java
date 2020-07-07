@@ -42,8 +42,8 @@ public class CollectionTest {
 		System.out.println("문제3");
 		System.out.println(set2);
 		
-		
-		addEmployee("100001","홍길동",28,"인사팀");
+		HashMap hm = new HashMap();
+		hm.put("100001",new Employee("홍길동",28,"인사팀"));                                                 
 		addEmployee("100000","박길동",28,"총무팀");
 		addEmployee("100003","박찬호",28,"회계팀");
 		addEmployee("100002","이순신",28,"총무팀");

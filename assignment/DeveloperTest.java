@@ -1,4 +1,4 @@
-package test0702;
+package assignment;
 
 import java.util.Calendar;
 

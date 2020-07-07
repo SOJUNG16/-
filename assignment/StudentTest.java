@@ -1,4 +1,4 @@
-package test0624;
+package assignment;
 
 import java.util.Scanner;
 
@@ -47,8 +47,7 @@ public class StudentTest {
 		while(true) {
 		System.out.println("선택하세요. [0:나가기, 1:학생입력, 2:학생수출력, 3:학과별 학점평균,4:학생목록출력]");
 		switch (scanner.nextInt()) {
-		case 0: System.out.println("나가기");
-			return;
+		case 0: System.out.println("나가기"); return;
 		case 1: //학생입력
 			Student stu = new Student();
 			

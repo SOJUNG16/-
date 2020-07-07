@@ -1,4 +1,4 @@
-package test0626;
+package assignment;
 //• 실습: 학원시스템
 
 import java.util.Scanner;
@@ -22,14 +22,14 @@ class Teacher {
 	}
 }
 
-public class StudentTest {
+public class StudentTest2 {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		int stucount = 0;
 		int teacount = 0;
-		Student [] stus = new Student[100];
+		Student2 [] stus = new Student2[100];
 		Teacher [] teas = new Teacher[100];
-		Student student = null; //Student student = new Student();
+		Student2 student = null; //Student student = new Student();
 		Teacher teacher = null;//Teacher teacher = new Teacher();
 		while (true) {
 			System.out.println("선택하세요. [0:나가기, 1:학생등록, 2:강사등록, 3. 관련자 조회, 4. 강의등록, 5:강의조회]");

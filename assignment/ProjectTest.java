@@ -1,4 +1,4 @@
-package test0630;
+package assignment;
 //클래스는 생성자 인스턴스를 만들 수 있는 방법 제안
 
 public class ProjectTest {

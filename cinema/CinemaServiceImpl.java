@@ -137,21 +137,11 @@ public class CinemaServiceImpl implements CinemaService{
 				System.out.println("몇 명이 볼 거예요~?");
 				int people = scan.nextInt();
 				int price = people * 50000;
+				
 				if (rps.play().equals("승리")) {
-					System.out.println("와우! 행운의 여신이 당신에게! 5000원 할인!");
-					System.out.println("이제 계산해볼까요~");
-					System.out.println("포인트를 쓸래요~?");
+					System.out.println("와우! 행운의 여신이 당신에게! 5000원 할인!\n 이제 계산해볼까요~\n 포인트를 쓸래요~? ");
 					System.out.println("1: 네!    2: 아뇨!");
-					switch (scan.nextInt()) {
-				case 1:
-					Member tmp = (Member)this.members.get(id);
-					price = price - tmp.getPoint();
-					tmp.setPoint(0);
-					members.put(id, tmp);
-					break;
-				case 2: 
-					break;
-				}
+					price = extracted(scan, id, price);
 					System.out.println("[ 총 " + (price - 5000) + "원 결제완료. ]");
 					// 포인트 적립
 					int point = (int) (price * 0.1);
@@ -167,20 +157,11 @@ public class CinemaServiceImpl implements CinemaService{
 //					System.out.println(today);
 					return;
 				} else {
-					System.out.println("저런.. 꽝!");
+					System.out.println("저런.. 꽝!\n ");
 					System.out.println("이제 계산해볼까요~");
 					System.out.println("포인트 쓸래요~?");
 					System.out.println("1: 네!    2: 아뇨!");
-					switch (scan.nextInt()) {
-					case 1:
-						Member tmp = (Member)this.members.get(id);
-						price = price - tmp.getPoint();
-						tmp.setPoint(0);
-						members.put(id, tmp);
-						break;
-					case 2: 
-						break;
-					}
+					price = extracted(scan, id, price);
 					System.out.println("[ 총 " + price + "원 결제완료. ]");
 					// 포인트 적립
 					int point = (int) (price * 0.1);
@@ -196,6 +177,20 @@ public class CinemaServiceImpl implements CinemaService{
 			} else {
 				System.out.println("영화 제목을 다시 확인해볼까~?");
 			}
+	}
+
+	public int extracted(Scanner scan, String id, int price) {
+		switch (scan.nextInt()) {
+case 1:
+		Member tmp = (Member)this.members.get(id);
+		price = price - tmp.getPoint();
+		tmp.setPoint(0);
+		members.put(id, tmp);
+		break;
+case 2: 
+		break;
+}
+		return price;
 	}
 
 	@Override

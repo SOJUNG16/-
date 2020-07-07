@@ -1,4 +1,4 @@
-package test0630;
+package assignment;
 
 class Parent {
 	String name;

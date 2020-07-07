@@ -1,4 +1,4 @@
-package test0701;
+package assignment;
 
 abstract class Book { //인스턴스화 안됨 자식을 통해서 인스턴스화됨
 	protected int num;

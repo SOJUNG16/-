@@ -1,4 +1,4 @@
-package test0701;
+package assignment;
 
 class Mother {
 	private String name;

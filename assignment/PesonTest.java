@@ -1,4 +1,4 @@
-package test0626;
+package assignment;
 
 class Person { //멤버변수: 존재할때 필요한 속성
 	private String name;

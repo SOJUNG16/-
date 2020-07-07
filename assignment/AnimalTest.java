@@ -1,4 +1,4 @@
-package test0624;
+package assignment;
 
 //•과제: Animal class를 설계한다
 //Animal ani = new Animal();

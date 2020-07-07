@@ -1,4 +1,4 @@
-package test0626;
+package assignment;
 
 //실습: 다음 클래스 설계
 //SpecialMember, Member를 설계하시오
