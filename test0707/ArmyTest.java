@@ -1,4 +1,5 @@
-package assignment;
+package test0707;
+
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 //•실습: Army에 대한 클래스

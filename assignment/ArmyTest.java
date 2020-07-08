@@ -70,9 +70,11 @@ class Army {
 	}
 	public void printSubOverTimePay() { //부하별 야근수당을 출력한다
 		DecimalFormat df2 = new DecimalFormat("#,###");
-		for(int i=0; i<count; i++) {
-			if(sub[i] instanceof SpecialArmy) {
-				System.out.println("{"+sub[i].getName()+"}의 야근수당은 {"+df2.format(getOverTimePayByGrade())+"} 입니다");
+		for(Army s : sub) {
+			if(s != null && s instanceof SpecialArmy) {
+				System.out.printf("{%s}의 야근수당은 {%s}입니다\n",s.getName(),df2.format(s.getOverTimePayByGrade()+((SpecialArmy) s).getBonus()));
+			} else if(s!= null) {
+				System.out.printf("{%s}의 야근수당은 {%s}입니다\n",s.getName(),df2.format(s.getOverTimePayByGrade()));
 			}
 		}
 	}
@@ -85,7 +87,7 @@ class Army {
 	 public int getSubTotalPeriod() {//부하들의 총 근무기간을 월로 리턴한다
 		 Calendar start = Calendar.getInstance();
 		 Calendar end = Calendar.getInstance();
-		 int sum = 0;
+		 int totalPeriod = 0;
 		
 		 for(int i=0; i<count; i++) {
 		 int year = Integer.valueOf(sub[i].strDt.substring(0,4));
@@ -98,11 +100,11 @@ class Army {
 		 day = Integer.valueOf(sub[i].endDt.substring(6,8));
 		 end.set(year, mm, day);
 		 
-		int cal = ((int)(end.getTimeInMillis()-start.getTimeInMillis())/(1000*60*60*24*30));
+		long cal = (end.getTimeInMillis()-start.getTimeInMillis())/1000;
 		 
-		sum += cal;
+		totalPeriod += (int)cal/(60*60*24*30);
 		 }
-		 return sum;
+		 return totalPeriod;
 	 }
 	 public void returnSub(Army[] sub) { //부하들 목록을 파리미터 Army[] sub에 리턴한다
 		 for(int i=0; i<count; i++) {
@@ -113,12 +115,12 @@ class Army {
 	 public void printSub() {  //부하들을 출력한다
 		 for(int i=0; i<count; i++) {
 			 if(sub[i] instanceof SpecialArmy) {
-				 System.out.println("우수 "+sub[i].getGrade()+" "+sub[i].getName()+" "
+				 System.out.println("우수 "+sub[i].getGrade()+"  "+sub[i].getName()+"  "
 				 		+ sub[i].getStrDt().substring(0,4)+ "-" + sub[i].getStrDt().substring(4,6)
 				 		+ "-" + sub[i].getStrDt().substring(6,8) + "~" + sub[i].getEndDt().substring(0,4)
 				 		+"-" + sub[i].getStrDt().substring(4,6) + "-" + sub[i].getEndDt().substring(6,8));
 			 } else {
-				 System.out.println(""+sub[i].getGrade()+" "+sub[i].getName()+"" 
+				 System.out.println(""+sub[i].getGrade()+" "+sub[i].getName()+"  " 
 				 		+ sub[i].getStrDt().substring(0, 4)+ "-" + sub[i].getStrDt().substring(4,6)
 				 		+ "-" + sub[i].getStrDt().substring(6,8) + "~" + sub[i].getEndDt().substring(0,4)
 				 		+ "-" + sub[i].getStrDt().substring(4,6) + "-" + sub[i].getEndDt().substring(6,8));
@@ -167,13 +169,14 @@ public class ArmyTest {
 		m.addArmySub(sub2);
 		m.addArmySub(sub3);
 		
-		m.printSubOverTimePay();
-		System.out.println(m.getThisMMPeriod()+"일 남았습니다"); //남은근무기간
+		
+		System.out.println("이번달 남은 근무기간"+m.getThisMMPeriod()+"일 남았습니다"); //남은근무기간
 		m.printSub();
-		System.out.println(m.getSubTotalPeriod()+"개월");
+		System.out.println("부하들의 근무기간은 총"+m.getSubTotalPeriod()+"개월");
 
 		Army[] sub = new Army[5];
 		m.returnSub(sub);
+		m.printSubOverTimePay();
 
 		for(int i = 0; i < 3; i++) {
 		 System.out.println(sub[i].getName());
